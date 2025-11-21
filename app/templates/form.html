@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Car Workshop Service Request</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="page-container">
+    <div class="page-header">
+      <h1>Car Workshop Service Request</h1>
+      <p>Submit your car issue and let the AI assistant classify and prioritize it.</p>
+    </div>
+
+    <div class="card">
+      <form action="{{ url_for('submit') }}" method="post">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input name="phone" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="car_brand">Car Brand</label>
+            <input name="car_brand" id="car_brand">
+          </div>
+
+          <div class="form-group">
+            <label for="car_model">Car Model</label>
+            <input name="car_model" id="car_model">
+          </div>
+
+          <div class="form-group">
+            <label for="car_age_years">Car Age (years)</label>
+            <input name="car_age_years" id="car_age_years" type="number" min="0">
+          </div>
+
+          <div class="form-group">
+            <label for="km_driven">KM Driven</label>
+            <input name="km_driven" id="km_driven" type="number" min="0">
+          </div>
+
+          <div class="form-group">
+            <label for="last_service_months">Last Service (months)</label>
+            <input name="last_service_months" id="last_service_months" type="number" min="0">
+          </div>
+
+          <div class="form-group full">
+            <label for="issue_text">Problem Description</label>
+            <textarea name="issue_text" id="issue_text" placeholder="Describe the issue (e.g. engine noise, AC not cooling)..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <a href="{{ url_for('admin') }}" class="btn btn-secondary">Go to Admin Dashboard</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

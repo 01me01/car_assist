@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Request Submitted</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="page-container">
+    <div class="page-header">
+      <h2>Request Submitted</h2>
+      <p>Here is the AI-based triage for your request.</p>
+    </div>
+
+    <div class="card">
+      <div class="result-grid mb-4">
+        <div>
+          <div class="result-card-title">Predicted Service Details</div>
+
+          <p class="mb-2">
+            <span class="badge badge-category">Category: {{ category }}</span>
+          </p>
+
+          <p class="mb-2">
+            {% if priority == 'High' %}
+              <span class="badge badge-priority-high">Priority: {{ priority }}</span>
+            {% elif priority == 'Medium' %}
+              <span class="badge badge-priority-medium">Priority: {{ priority }}</span>
+            {% else %}
+              <span class="badge badge-priority-low">Priority: {{ priority }}</span>
+            {% endif %}
+          </p>
+
+          <p class="mb-2">
+            <span class="hours-pill">Estimated Service Time: {{ hours }} hrs</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="result-card-title">Reasoning:</div>
+        <div class="text-block">{{ reasoning }}</div>
+      </div>
+
+      <div class="mb-3">
+        <div class="result-card-title">Recommendations:</div>
+        <div class="text-block">{{ recommendation }}</div>
+      </div>
+
+      <div class="form-actions">
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Submit Another Request</a>
+        <a href="{{ url_for('admin') }}" class="btn btn-secondary">Admin Dashboard</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
