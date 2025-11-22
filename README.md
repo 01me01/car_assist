@@ -22,7 +22,7 @@ It processes customer service requests, predicts service details using local ML 
 
 ## How to Run the Project
 ### 1. Clone the Repository
-	git clone https://github.com/<your-username>/car_assist.git
+	git clone https://github.com/01me01/car_assist.git
 	cd car_assist
 
 ### 2. Create Virtual Environment
@@ -152,3 +152,4 @@ Recommendations
     │── .env (ignored)
     │── .gitignore
     │── README.md
+
