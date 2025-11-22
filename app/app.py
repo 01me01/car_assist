@@ -18,9 +18,9 @@ from db import insert_service_request, fetch_all_requests
 app = Flask(__name__, template_folder="templates", static_folder="static")
 
 # Load ML models
-service_model = joblib.load(r"C:\Users\MEHAK\OneDrive\Documents\carAssist\models\service_category_model.pkl")
-priority_model = joblib.load(r"C:\Users\MEHAK\OneDrive\Documents\carAssist\models\priority_model.pkl")
-duration_model = joblib.load(r"C:\Users\MEHAK\OneDrive\Documents\carAssist\models\duration_model.pkl")
+service_model = joblib.load("models/service_category_model.pkl")
+priority_model = joblib.load("models/priority_model.pkl")
+duration_model = joblib.load("models/duration_model.pkl")
 # Groq Setup
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = os.getenv("GROQ_API_URL")
